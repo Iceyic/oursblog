@@ -64,7 +64,7 @@ export default {
   },
   methods: {
     getScroll () {
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       // console.log(scrollTop)
       if (scrollTop > 0) {
         // 滚动大于0的时候要做的操作

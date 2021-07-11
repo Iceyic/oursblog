@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <!-- <text></text> -->
     <!--    <img alt="Vue logo" src="../assets/logo.png">-->
     <!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
     <b-carousel
@@ -48,7 +49,7 @@
         </p>
       </b-carousel-slide>
     </b-carousel>
-<!--    博客内容-->
+    <!-- 博客内容 -->
     <div class="main blog">
       <b-card-group columns>
         <b-card
@@ -103,19 +104,23 @@
         </b-card>
       </b-card-group>
     </div>
+    <component :is="com"></component>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
+import { registryComponents } from './../plugins/index'
 export default {
   name: 'Home',
   components: {
     // HelloWorld
+    ...registryComponents
   },
   data () {
     return {
+      com: 'm-text',
       slide: 0,
       sliding: null
     }
